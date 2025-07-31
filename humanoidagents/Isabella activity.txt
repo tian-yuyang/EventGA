@@ -1,0 +1,203 @@
+07:00:00 AM: Isabella Rodriguez is on the way to Isabella Rodriguez's apartment:bathroom:shower to pick up body wash
+07:00:45 AM: Isabella Rodriguez is picking up body wash
+07:01:15 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:kitchen sink
+07:02:05 AM: Isabella Rodriguez is completing her morning routine.
+07:15:00 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+07:15:25 AM: Isabella Rodriguez is preparing to leave for Hobbs Cafe.
+07:30:00 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe
+07:31:10 AM: Isabella Rodriguez is putting back menu
+07:31:40 AM: Isabella Rodriguez is on the way to Harvey Oak Supply Store:supply store
+07:36:05 AM: Isabella Rodriguez is putting back notebooks
+07:36:35 AM: Isabella Rodriguez is on the way to Isabella Rodriguez's apartment:main room
+07:41:40 AM: Isabella Rodriguez is putting back clothes
+07:42:10 AM: Isabella Rodriguez is on the way to Isabella Rodriguez's apartment:bathroom
+07:42:55 AM: Isabella Rodriguez is putting back body wash
+07:43:25 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter to pick up pastries
+07:44:10 AM: Isabella Rodriguez is picking up pastries
+07:44:40 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+07:44:50 AM: Isabella Rodriguez is checking the inventory and setting up the display for the day's special offerings at Hobbs Cafe.
+07:58:25 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter to pick up cash register
+07:58:30 AM: Isabella Rodriguez is picking up cash register
+07:59:00 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+07:59:10 AM: Isabella Rodriguez is finalizing the setup at Hobbs Cafe for opening.
+08:13:25 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe
+08:13:30 AM: Isabella Rodriguez is putting back pastries
+08:14:00 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe
+08:14:10 AM: Isabella Rodriguez is putting back cash register
+08:14:40 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter to pick up cash register
+08:15:00 AM: Isabella Rodriguez is picking up cash register
+08:15:30 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+08:15:50 AM: Isabella Rodriguez is getting ready to open Hobbs Cafe.
+08:29:40 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+08:30:00 AM: Isabella Rodriguez is serving customers at Hobbs Cafe.
+08:44:40 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe customer seating
+08:45:35 AM: Isabella Rodriguez is engaging with customers at Hobbs Cafe.
+08:54:40 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe customer seating
+08:55:25 AM: Isabella Rodriguez is engaging with customers at Hobbs Cafe.
+09:09:40 AM: Isabella Rodriguez is waiting for Maria Lopez
+09:10:20 AM: Isabella Rodriguez is talking with Maria Lopez about: Isabella and Maria discussed breakfast specials at the cafe, with Maria choosing the avocado toast with a poached egg and expressing interest in any upcoming events or updates.
+09:12:35 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter to pick up coffee
+09:13:35 AM: Isabella Rodriguez is picking up coffee
+09:14:05 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+09:14:10 AM: Isabella Rodriguez is engaging with customers at Hobbs Cafe.
+09:27:35 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe customer seating
+09:28:55 AM: Isabella Rodriguez is engaging with customers at Hobbs Cafe.
+09:42:35 AM: Isabella Rodriguez is waiting for Maria Lopez
+09:43:30 AM: Isabella Rodriguez is talking with Maria Lopez about: Isabella and Maria discussed trying a new breakfast special of avocado toast and planned to attend a brunch with live music this Saturday, along with a 'Coffee and Canvas' night next week, where Isabella offered to save spots for both events.
+09:46:25 AM: Isabella Rodriguez is on the way to artist's co-living space:Francisco Lopez's room:easel to pick up canvas
+09:53:25 AM: Isabella Rodriguez is picking up canvas
+09:53:55 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+10:01:40 AM: Isabella Rodriguez is preparing for the upcoming brunch and 'Coffee and Canvas' events.
+10:06:25 AM: Isabella Rodriguez is on the way to The Willows Market and Pharmacy::grocery store shelf to pick up canned food
+10:06:30 AM: Isabella Rodriguez is picking up canned food
+10:07:00 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:refrigerator
+10:11:40 AM: Isabella Rodriguez is checking the stock of ingredients for upcoming events.
+10:21:25 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+10:22:00 AM: Isabella Rodriguez is reviewing the event logistics for the upcoming brunch and 'Coffee and Canvas' night.
+10:36:25 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+10:36:30 AM: Isabella Rodriguez is checking in with her staff to ensure everything is running smoothly at Hobbs Cafe.
+10:46:25 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe customer seating
+10:47:20 AM: Isabella Rodriguez is taking a short break to recharge.
+10:56:25 AM: Isabella Rodriguez is waiting for Eddy Lin
+10:57:20 AM: Isabella Rodriguez is talking with Eddy Lin about: Isabella and Eddy plan to catch up later at Hobbs Cafe to discuss Eddy's college plans and upcoming events, after Eddy finishes breakfast with Mei Lin.
+11:00:25 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe
+11:01:20 AM: Isabella Rodriguez is putting back cash register
+11:01:50 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe
+11:02:10 AM: Isabella Rodriguez is putting back coffee
+11:02:40 AM: Isabella Rodriguez is on the way to artist's co-living space:Francisco Lopez's room
+11:10:25 AM: Isabella Rodriguez is putting back canvas
+11:10:55 AM: Isabella Rodriguez is on the way to The Willows Market and Pharmacy:
+11:11:00 AM: Isabella Rodriguez is putting back canned food
+11:11:30 AM: Isabella Rodriguez is on the way to The Willows Market and Pharmacy:store:grocery store shelf to pick up snacks
+11:12:50 AM: Isabella Rodriguez is picking up snacks
+11:13:20 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe customer seating
+11:16:25 AM: Isabella Rodriguez is taking a break and having a snack.
+11:23:30 AM: Isabella Rodriguez is on the way to Maria Lopez
+11:24:00 AM: Isabella Rodriguez is talking with Maria Lopez about: Maria and Isabella are excitedly planning to have brunch together on Saturday to catch up, discuss their studies, and possibly enjoy avocado toast with Eddy.
+11:27:30 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter to pick up coffee
+11:28:50 AM: Isabella Rodriguez is picking up coffee
+11:29:15 AM: Isabella Rodriguez is on the way to Hailey Johnson
+11:29:30 AM: Isabella Rodriguez is talking with Hailey Johnson about: Hailey and Isabella plan to meet at Hobbs Cafe on Thursday afternoon to brainstorm ideas for supporting Eddy's college plans and discuss Hailey's novel while enjoying coffee together.
+11:35:35 AM: Isabella Rodriguez is on the way to The Willows Market and Pharmacy:store
+11:37:10 AM: Isabella Rodriguez is putting back snacks
+11:37:40 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe
+11:41:15 AM: Isabella Rodriguez is putting back coffee
+11:41:45 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter to pick up cash register
+11:42:00 AM: Isabella Rodriguez is picking up cash register
+11:42:30 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+11:42:40 AM: Isabella Rodriguez is serving customers and managing Hobbs Cafe.
+11:50:25 AM: Isabella Rodriguez is talking with Eddy Lin about: Eddy and Isabella are planning a "farewell to high school" get-together to create lasting memories with friends before Eddy heads off to college, and they are excited to brainstorm activities, decorations, and a slideshow for the event.
+11:54:55 AM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+11:55:05 AM: Isabella Rodriguez is serving customers and managing Hobbs Cafe.
+11:58:00 AM: Isabella Rodriguez is on the way to John Lin
+11:58:55 AM: Isabella Rodriguez is talking with John Lin about: John and Isabella plan to meet this Friday after work to brainstorm ideas for Eddy's farewell get-together at Hobbs Cafe, with John offering to help with decorations and supplies.
+12:03:05 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+12:03:45 PM: Isabella Rodriguez is on the way to Hailey Johnson
+12:04:45 PM: Isabella Rodriguez is talking with Hailey Johnson about: Hailey and Isabella are excitedly planning a farewell get-together for Eddy, discussing ideas like a memory wall, cozy cafe setup, trivia games, and personalized snacks, with the goal of making the event a memorable celebration of his next chapter.
+12:07:30 PM: Isabella Rodriguez is on the way to Maria Lopez
+12:07:45 PM: Isabella Rodriguez is talking with Maria Lopez about: Maria and Isabella plan to meet at Hobbs Cafe at 2 PM on Thursday to brainstorm trivia questions for Eddy's farewell get-together and discuss brunch details.
+12:11:25 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter to pick up coffee
+12:12:15 PM: Isabella Rodriguez is picking up coffee
+12:12:45 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+12:12:50 PM: Isabella Rodriguez is serving customers and managing Hobbs Cafe.
+12:26:25 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter to pick up pastries
+12:26:30 PM: Isabella Rodriguez is picking up pastries
+12:27:00 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe customer seating
+12:28:10 PM: Isabella Rodriguez is eating lunch.
+12:41:25 PM: Isabella Rodriguez is waiting for Maria Lopez
+12:42:30 PM: Isabella Rodriguez is talking with Maria Lopez about: Isabella and Maria are planning a trivia game for Eddy's farewell gathering, suggesting they meet tomorrow afternoon at Hobbs Cafe to brainstorm questions and ideas.
+12:47:25 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+12:48:40 PM: Isabella Rodriguez is serving customers and managing Hobbs Cafe while thinking about the details for Eddy's farewell get-together.
+12:49:30 PM: Isabella Rodriguez is talking with Hailey Johnson about: Hailey Johnson and Isabella Rodriguez are planning a farewell get-together for Eddy at a cafe, which will include a heartfelt slideshow of photos and memories, with a deadline for submissions set for next Friday.
+12:53:50 PM: Isabella Rodriguez is on the way to Harvey Oak Supply Store:supply store:supply store product shelf to pick up notebooks
+12:55:25 PM: Isabella Rodriguez is on the way to Eddy Lin
+12:55:45 PM: Isabella Rodriguez is talking with Eddy Lin about: Eddy and Isabella enthusiastically plan to brainstorm ideas for a farewell get-together, which will take place tomorrow at Hobbs Cafe, and both express their excitement about including a memory wall and sharing photos and stories to celebrate their memories together.
+12:59:45 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+01:00:45 PM: Isabella Rodriguez is serving customers and managing Hobbs Cafe.
+01:14:45 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+01:15:00 PM: Isabella Rodriguez is serving customers and managing Hobbs Cafe.
+01:23:40 PM: Isabella Rodriguez is on the way to Hailey Johnson
+01:24:50 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+01:26:00 PM: Isabella Rodriguez is serving customers and managing Hobbs Cafe.
+01:29:45 PM: Isabella Rodriguez is on the way to Eddy Lin
+01:30:55 PM: Isabella Rodriguez is talking with Eddy Lin about: Eddy and Isabella are planning a farewell get-together for their high school friends, discussing including favorite memories in a slideshow and involving other friends like Mei, Jake, and Sarah in the planning to make it a memorable celebration.
+01:31:40 PM: Isabella Rodriguez is on the way to Maria Lopez
+01:32:45 PM: Isabella Rodriguez is talking with Maria Lopez about: Maria and Isabella are planning Eddy's farewell gathering, suggesting activities like trivia, a slideshow, a photo booth, icebreakers, and Eddy's favorite snacks, and they aim to schedule the event for a weekend when most friends are available.
+01:37:00 PM: Isabella Rodriguez is on the way to Oak Hill College:classroom:classroom podium to pick up notes
+01:42:55 PM: Isabella Rodriguez is picking up notes
+01:43:25 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+01:49:20 PM: Isabella Rodriguez is continuing to serve customers while also organizing her notes for Eddy's farewell gathering brainstorming session.
+01:57:00 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+01:57:10 PM: Isabella Rodriguez is noting down ideas for Eddy's farewell gathering while serving customers.
+02:09:00 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe
+02:09:20 PM: Isabella Rodriguez is putting back cash register
+02:09:50 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe
+02:10:00 PM: Isabella Rodriguez is putting back coffee
+02:10:30 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe
+02:10:35 PM: Isabella Rodriguez is putting back pastries
+02:11:05 PM: Isabella Rodriguez is on the way to Harvey Oak Supply Store:supply store
+02:15:25 PM: Isabella Rodriguez is putting back notebooks
+02:15:55 PM: Isabella Rodriguez is on the way to Oak Hill College:classroom
+02:23:00 PM: Isabella Rodriguez is putting back notes
+02:23:30 PM: Isabella Rodriguez is on the way to The Willows Market and Pharmacy:store:grocery store shelf to pick up cake
+02:29:10 PM: Isabella Rodriguez is picking up cake
+02:29:40 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe customer seating
+02:30:30 PM: Isabella Rodriguez is on the way to Eddy Lin
+02:31:25 PM: Isabella Rodriguez is on the way to Hailey Johnson
+02:31:35 PM: Isabella Rodriguez is talking with Hailey Johnson about: Hailey and Isabella are collaborating to plan a farewell event for Eddy, discussing fun activities and contributions for a slideshow, and have agreed to brainstorm ideas together after Isabella finishes her lunch.
+02:38:30 PM: Isabella Rodriguez is on the way to The Willows Market and Pharmacy:store
+02:38:45 PM: Isabella Rodriguez is putting back cake
+02:39:15 PM: Isabella Rodriguez is on the way to Harvey Oak Supply Store:supply store:supply store product shelf to pick up notebooks
+02:42:35 PM: Isabella Rodriguez is on the way to Maria Lopez
+02:42:55 PM: Isabella Rodriguez is talking with Maria Lopez about: Maria and Isabella are planning Eddy's farewell gathering, meeting at their usual spot at 5 PM to brainstorm ideas, including funny stories and themed photo booth props.
+02:57:10 PM: Isabella Rodriguez is organizing her notes for Eddy's farewell gathering.
+03:01:30 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe customer seating
+03:02:45 PM: Isabella Rodriguez is finalizing her notes for Eddy's farewell gathering.
+03:11:30 PM: Isabella Rodriguez is on the way to Maria Lopez
+03:12:40 PM: Isabella Rodriguez is talking with Maria Lopez about: Maria and Isabella are excitedly planning a farewell gathering for Eddy at Hobbs Cafe on the same day at 5 PM, where they will incorporate games, a photo booth, a slideshow of memories, and a menu inspired by Eddy's favorite foods.
+03:16:20 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter to pick up coffee
+03:16:35 PM: Isabella Rodriguez is picking up coffee
+03:17:05 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+03:17:20 PM: Isabella Rodriguez is finishing her late lunch and getting ready to serve customers at Hobbs Cafe.
+03:31:20 PM: Isabella Rodriguez is on the way to The Willows Market and Pharmacy::grocery store shelf to pick up cake
+03:31:25 PM: Isabella Rodriguez is picking up cake
+03:31:55 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+03:36:50 PM: Isabella Rodriguez is preparing for Eddy's farewell gathering while serving customers.
+03:46:20 PM: Isabella Rodriguez is waiting for Maria Lopez
+03:46:40 PM: Isabella Rodriguez is talking with Maria Lopez about: Isabella and Maria are planning a memorable gathering for Eddy at Hobbs Cafe, including a photo booth, slideshow, memory corner, fun games like trivia, and a group photo to capture the day, ensuring all details come together perfectly.
+03:51:25 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+03:51:40 PM: Isabella Rodriguez is reviewing her notes for Eddy's farewell gathering while serving customers.
+04:03:05 PM: Isabella Rodriguez is talking with Eddy Lin about: Eddy and Isabella are excitedly planning a special gathering together and have agreed to meet after school tomorrow to brainstorm activities, review pictures, and discuss songs to include in the celebration.
+04:07:10 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter to pick up pastries
+04:07:20 PM: Isabella Rodriguez is picking up pastries
+04:07:50 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+04:08:10 PM: Isabella Rodriguez is preparing the cafe for Eddy's farewell gathering while serving customers.
+04:21:25 PM: Isabella Rodriguez is talking with Maria Lopez about: Maria and Isabella are collaborating on organizing a farewell gathering for Eddy, planning to meet later this week to finalize decorations and trivia ideas to make the event special.
+04:25:35 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+04:25:40 PM: Isabella Rodriguez is preparing for Eddy's farewell gathering.
+04:40:35 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe customer seating
+04:41:35 PM: Isabella Rodriguez is checking in with Maria Lopez about the plans for Eddy's farewell gathering.
+04:45:45 PM: Isabella Rodriguez is on the way to Klaus Mueller
+04:46:40 PM: Isabella Rodriguez is talking with Klaus Mueller about: Klaus and Isabella are planning a farewell gathering for Eddy at Hobbs Cafe, featuring games, a photo booth, and a slideshow, and Isabella appreciates Klaus's offer to help with the setup and activities.
+04:50:35 PM: Isabella Rodriguez is talking with Maria Lopez about: Maria and Isabella are planning a farewell gathering for Eddy, and they agreed to meet tomorrow at 3 PM to discuss decorations, trivia questions, and ideas for a memory corner and photo booth.
+04:51:50 PM: Isabella Rodriguez is on the way to Eddy Lin
+04:52:55 PM: Isabella Rodriguez is talking with Eddy Lin about: Eddy and Isabella are planning a special gathering to celebrate their friendship and share favorite memories before Eddy heads off to college, with plans for a slideshow, games, and trivia, and they intend to finalize details in a future chat.
+04:57:40 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe counter
+04:58:50 PM: Isabella Rodriguez is serving customers and checking in with her staff about Eddy's farewell gathering preparations.
+05:17:40 PM: Isabella Rodriguez is on the way to The Willows Market and Pharmacy:store:grocery store shelf to pick up snacks
+05:22:25 PM: Isabella Rodriguez is picking up snacks
+05:22:55 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe customer seating
+05:26:45 PM: Isabella Rodriguez is taking a short break to relax and have a light snack before closing the cafe.
+05:32:40 PM: Isabella Rodriguez is on the way to Harvey Oak Supply Store:supply store
+05:36:25 PM: Isabella Rodriguez is putting back notebooks
+05:36:55 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe
+05:41:20 PM: Isabella Rodriguez is putting back coffee
+05:41:50 PM: Isabella Rodriguez is on the way to The Willows Market and Pharmacy:
+05:41:55 PM: Isabella Rodriguez is putting back cake
+05:42:25 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe
+05:47:05 PM: Isabella Rodriguez is putting back pastries
+05:47:35 PM: Isabella Rodriguez is on the way to The Willows Market and Pharmacy:store
+05:52:05 PM: Isabella Rodriguez is putting back snacks
+05:52:35 PM: Isabella Rodriguez is on the way to Harvey Oak Supply Store:supply store:supply store product shelf to pick up notebooks
+05:56:45 PM: Isabella Rodriguez is picking up notebooks
+05:57:15 PM: Isabella Rodriguez is on the way to Hobbs Cafe:cafe:cafe customer seating
