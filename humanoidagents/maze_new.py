@@ -542,9 +542,9 @@ class Maze:
   
   def assign_location(self, tile):
     if self.occupied_tiles[tile[1]][tile[0]] == 1:
-      dx = [-1, 0, 1, 0]
-      dy = [0, -1, 0, 1]
-      for i in range(4):
+      dx = [-1, 0, 1, 0, -1, -1, 1, 1]
+      dy = [0, -1, 0, 1, -1, 1, -1, 1]
+      for i in range(8):
         new_tile = (tile[0] + dx[i], tile[1] + dy[i])
         if new_tile[0] < 0 or new_tile[0] >= self.maze_width or \
            new_tile[1] < 0 or new_tile[1] >= self.maze_height:
@@ -553,8 +553,8 @@ class Maze:
           self.occupied_tiles[new_tile[1]][new_tile[0]] = 1
           return new_tile
       
-      for i in range(4):
-        for j in range(4):
+      for i in range(8):
+        for j in range(8):
           new_tile = (tile[0] + dx[i] + dx[j], tile[1] + dy[i] + dy[j])
           if new_tile[0] < 0 or new_tile[0] >= self.maze_width or \
              new_tile[1] < 0 or new_tile[1] >= self.maze_height:
@@ -577,8 +577,8 @@ if __name__ == "__main__":
   maze = Maze()
   # print(maze.address_tiles)
   # print(maze.address_tiles["Dorm for Oak Hill College:Ayesha Khan's room:desk"])
-  for sector in maze.get_accessible_sectors():
-    for arena in maze.get_accessible_sector_arenas(sector):
-      if len(maze.get_accessible_sector_arena_game_objects(sector, arena)) == 0:
-        print(sector, arena)
-            
+  # for sector in maze.get_accessible_sectors():
+  #   for arena in maze.get_accessible_sector_arenas(sector):
+  #     if len(maze.get_accessible_sector_arena_game_objects(sector, arena)) == 0:
+  #       print(sector, arena)
+  print(maze.collision_maze)

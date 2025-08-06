@@ -9,7 +9,7 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 from operator import itemgetter
-from llm import OpenAILLM, LocalLLM, ClaudeLLM
+from llm import OpenAILLM, ClaudeLLM
 from utils import *
 from spatial_memory import MemoryTree
 from path_finder import *
@@ -19,7 +19,7 @@ from path_finder import *
 class GenerativeAgent:
 
     def __init__(self, path: str, 
-                 llm_provider: str, llm_model_name: str, embedding_model_name: str, action_end_time: datetime):
+                 llm_provider: str='openai', llm_model_name: str="gpt-4o", embedding_model_name: str="text-embedding-ada-002", action_end_time: datetime=None):
         self.name = ''
         self.description = ''
         self.daily_plan_req = ''
@@ -306,11 +306,11 @@ Output:
             print("---------------------------------- question:",question)
             memories = self.retrieve_memories(question, curr_time, top_n=15)
             # print("---------------------------------- memories:",memories)
-            prompt = f"Statements about {self.name}\n"
+            prompt = f"Given statements about {self.name}, what 3 high-level insights can you infer from the above statements? (example format: insight (because of 1, 5, 3))\n"
             index_str_to_memory = {str(i): memories[i] for i in range(len(memories))}
             for i, memory in enumerate(memories):
                 prompt += f"{i}. {memory}\n"
-            prompt += "What 3 high-level insights can you infer from the above statements? (example format: insight (because of 1, 5, 3))"
+            prompt += ""
             prompt += f'''Here is an example:
 1. Lila is my aunt.
 2. I closed the door and set off for a trip.
@@ -322,7 +322,7 @@ Output:
 Output: 1. My aunt Lila likes to eat honey. (because of 1, 4)
 2. I drive to Europe for a trip. (because of 2, 5, 6)
 '''
-            prompt += "Please output each insight on a new line, without any explaination."
+            prompt += "Please output each insight on a new line, without any explaination.\n"
             prompt += "Output:"
             insights = self.LLM.get_llm_response(prompt)
             print('---------------------------------- insights:',insights)
@@ -848,8 +848,10 @@ Your output needs to comply with the following constraints:
 (1) Please only contain one activity. 
 (2) Your response must consist with the personal information, especially waking up, eating and sleeping time.
 (3) Please consider the current high-level plan, the recent activity history and retrieved memory, it's okay to generate activity that isn't strictly following the high-level plan.
-(4) Make sure the activity is reasonable and feasible in the context of the persona's life, your response should be concrete and diverse .
-(5) In the format of "Reasoning: ...\nAnswer: {self.name} is"
+(4) Make sure the activity is reasonable and feasible in the context of the persona's life, your response should be concrete and diverse.
+(5) Don't always generate the same activity or too much similar to the high-level plan, try to generate different low-level activities based on the context.
+(6) Your response should be in plain text, without any formmatting or markdown.
+(7) In the format of "Reasoning: ...\nAnswer: {self.name} is"
 Here is several examples:
 [BEGIN OF EXAMPLES]
 Here is Kelly Bronson's personal information
@@ -1098,31 +1100,31 @@ Answer: '''
             while record_time in record and chosen_agent.name in record[record_time]:
                 del(record[record_time][chosen_agent.name])
                 record_time = DatetimeNL.add_time_sec(record_time, step_size)
-            if chosen_agent.curr_tile != self.curr_tile:
-                position = maze.assign_location(self.curr_tile)
-                potential_path = path_finder(maze.collision_maze, 
-                                    chosen_agent.curr_tile, 
-                                    position, 
-                                    collision_block_id)
-                record_time = curr_time
-                status_walking = {
-                    "name": chosen_agent.name,
-                    "activity": f"{chosen_agent.name} is on the way to {self.name}",
-                    "location": f"{maze.get_tile_path(self.curr_tile, 'arena')}",
-                    "bag": chosen_agent.bag,
-                }
-                status_waiting = {
-                    "name": self.name,
-                    "activity": f"{self.name} is waiting for {chosen_agent.name}",
-                    "location": f"{maze.get_tile_path(self.curr_tile, 'arena')}",
-                    "bag": self.bag,
-                }
-                for path in potential_path:
-                    chosen_agent.move_step(maze, path, record, record_time, status_walking)
-                    record_time = self.move_step(maze, self.curr_tile, record, record_time, status_waiting)
-                maze.release_location(chosen_agent.curr_tile)
-                chosen_agent.curr_tile = position
-                curr_time = record_time
+                
+            position = maze.assign_location(self.curr_tile)
+            potential_path = path_finder(maze.collision_maze, 
+                                chosen_agent.curr_tile, 
+                                position, 
+                                collision_block_id)
+            record_time = curr_time
+            status_walking = {
+                "name": chosen_agent.name,
+                "activity": f"{chosen_agent.name} is on the way to {self.name}",
+                "location": f"{maze.get_tile_path(self.curr_tile, 'arena')}",
+                "bag": chosen_agent.bag,
+            }
+            status_waiting = {
+                "name": self.name,
+                "activity": f"{self.name} is waiting for {chosen_agent.name}",
+                "location": f"{maze.get_tile_path(self.curr_tile, 'arena')}",
+                "bag": self.bag,
+            }
+            for path in potential_path:
+                chosen_agent.move_step(maze, path, record, record_time, status_walking)
+                record_time = self.move_step(maze, self.curr_tile, record, record_time, status_waiting)
+            maze.release_location(chosen_agent.curr_tile)
+            chosen_agent.curr_tile = position
+            curr_time = record_time
             record_time = curr_time
             
             conversations = self.dialogue(chosen_agent, curr_time)
