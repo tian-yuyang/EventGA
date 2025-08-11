@@ -1,0 +1,11 @@
+{"input_folder_name": "../generations/isabella_maria_klaus_hard_high_1",
+"output_folder_name": "../generations/isabella_maria_klaus_hard_high_2",
+"agent_filenames": ["Isabella Rodriguez", "Klaus Mueller", "Maria Lopez"],
+"default_agent_config_filename":"default_agent_config.json",
+"start_time":"2023-01-03T17:00:00",
+"end_time":"2023-01-03T22:00:00",
+"llm_provider":"openai",
+"llm_model_name":"gpt-4o-mini",
+"embedding_model_name":"text-embedding-ada-002",
+"daily_events_filename": "../daily_events/imk_hard.json"
+}

@@ -1,0 +1,13 @@
+{"input_folder_name": "../generations/fitness_hard_claude_1",
+"output_folder_name": "../generations/fitness_hard_claude_2",
+"agent_filenames": ["Isabella Rodriguez", "Klaus Mueller", "Maria Lopez", "Ayesha Khan", 
+                    "Hailey Johnson", "Francisco Lopez", "Eddy Lin", "Mei Lin", "John Lin", "Wolfgang Schulz", 
+                    "Sam Moore", "Arthur Burton", "Carmen Ortiz", "Ryan Park", "Tamara Taylor"],
+"default_agent_config_filename":"default_agent_config.json",
+"start_time":"2023-01-03T17:00:00",
+"end_time":"2023-01-03T22:00:00",
+"llm_provider":"claude",
+"llm_model_name":"gpt-4o-mini",
+"embedding_model_name":"text-embedding-ada-002",
+"daily_events_filename": "../daily_events/fitness_hard.json"
+}

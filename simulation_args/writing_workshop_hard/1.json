@@ -1,0 +1,13 @@
+{"input_folder_name": "../specific_agents/writing_workshop",
+"output_folder_name": "../generations/writing_workshop_hard",
+"agent_filenames": ["Isabella Rodriguez", "Klaus Mueller", "Maria Lopez", "Ayesha Khan", 
+                    "Hailey Johnson", "Francisco Lopez", "Eddy Lin", "Mei Lin", "John Lin", "Wolfgang Schulz", 
+                    "Sam Moore", "Arthur Burton", "Carmen Ortiz", "Ryan Park", "Tamara Taylor"],
+"default_agent_config_filename":"default_agent_config.json",
+"start_time":"2023-01-03T06:00:00",
+"end_time":"2023-01-03T22:00:00",
+"llm_provider":"openai",
+"llm_model_name":"gpt-4o-mini",
+"embedding_model_name":"text-embedding-ada-002",
+"daily_events_filename": "../daily_events/writing_workshop_hard.json"
+}
