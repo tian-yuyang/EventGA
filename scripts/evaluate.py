@@ -94,7 +94,7 @@ import os
 import json
 from datetime import datetime, timedelta
 import argparse
-from scripts.llm_real import OpenAILLM
+from llm import OpenAILLM
 from generative_agent_gen import GenerativeAgent
 from utils import *
 
@@ -145,9 +145,9 @@ def get_prompt(agent, criterion, history):
     elif criterion == "Bag Item Relevance":
         return f"Evaluate whether the items in {agent}'s bag are relevant to their actions during the day. For example, if they are participating in a fitness competition, do they have sports gear? If they are organizing, do they have organizational materials? Rate on a scale of 1 to 10, with 1 being no relevance and 10 being highly relevant.\n Here is {agent}'s action history:\n{history}\nPlease provide your answer as a single number between 1 and 10."
     elif criterion == "Daily Requirement Consistency":
-        
+        return f"Evaluate whether {agent}'s activities throughout the day are relevant to their daily plan requirement. Rate on a scale of 1 to 10, with 1 being completely irrelevant and 10 being highly relevant.\nHere is {agent}'s personal information: {agents[agent].get_str_iss()}\n Here is {agent}'s action history:\n{history}\nPlease provide your answer as a single number between 1 and 10."
     elif criterion == "Daily Activity Relevance":
-        return f"Evaluate whether {agent}'s activities throughout the day are relevant to their daily plan requirement. For the organizer, this includes preparation, organization, and management. For participants, this includes preparation and participation. Rate on a scale of 1 to 10, with 1 being completely irrelevant and 10 being highly relevant.\nHere is {agent}'s personal information: {agents[agent].get_str_iss()}\n Here is {agent}'s action history:\n{history}\nPlease provide your answer as a single number between 1 and 10."
+        return f"Evaluate whether {agent}'s activities throughout the day are relevant to the event requirement. For the organizer, this includes preparation, organization, and management. For participants, this includes preparation and participation. Rate on a scale of 1 to 10, with 1 being completely irrelevant and 10 being highly relevant.\nHere is {agent}'s personal information: {agents[agent].get_str_iss()}\n Here is {agent}'s action history:\n{history}\nPlease provide your answer as a single number between 1 and 10."
     elif criterion == "Interaction Quality":
         return f"Evaluate the quality of {agent}'s interactions with other agents. If it is related to the specific event, the score should be high. Consider whether they communicated effectively, coordinated actions, and collaborated as needed for their role. Rate on a scale of 1 to 10, with 1 being poor interaction and 10 being excellent interaction. Here is {agent}'s action history:\n{history}\nPlease provide your answer as a single number between 1 and 10."
     else:

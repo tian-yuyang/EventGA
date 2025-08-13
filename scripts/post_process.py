@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import argparse
 from utils import *
 from collections import Counter
-from scripts.llm_real import OpenAILLM
+from llm import OpenAILLM
 
 parser = argparse.ArgumentParser(description='run humanoid agents simulation')
 parser.add_argument("-c", "--config_filename", default="../simulation_args/philosophy_lecture/1.json")

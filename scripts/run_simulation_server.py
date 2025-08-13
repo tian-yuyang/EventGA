@@ -7,7 +7,7 @@ import random
 from collections import defaultdict
 from urllib.parse import urljoin
 
-from scripts.llm_real import openai_api_deploy
+from llm import openai_api_deploy
 from humanoid_agent import HumanoidAgent
 from location import Location
 from utils import DatetimeNL, load_json_file, write_json_file, bucket_agents_by_location, override_agent_kwargs_with_condition, get_curr_time_to_daily_event

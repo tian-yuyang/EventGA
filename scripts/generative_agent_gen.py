@@ -9,7 +9,7 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 from operator import itemgetter
-from scripts.llm_real import OpenAILLM, ClaudeLLM
+from llm import OpenAILLM, ClaudeLLM
 from utils import *
 from spatial_memory import MemoryTree
 from path_finder import *
@@ -126,7 +126,7 @@ class GenerativeAgent:
             "social_relationships": self.social_relationships,
             "action_end_time": datetime.isoformat(self.action_end_time),
             "high_level_plans": self.high_level_plans,
-            "bag": self.bag,
+            "bag": [item for item in self.bag],
             "memory": memory,
             "reflection_frequency": self.reflection_frequency,
             "specific_event_requirement": self.specific_event_requirement,
@@ -1066,7 +1066,7 @@ Answer: '''
                     "name": self.name,
                     "activity": f"{self.name} is on the way to {place}",
                     "location": f"{place}",
-                    "bag": self.bag,
+                    "bag": [item for item in self.bag],
                 }
                 for path in potential_path:
                     record_time = self.move_step(maze, path, record, record_time, status)
@@ -1119,7 +1119,7 @@ Answer: '''
                 "name": self.name,
                 "activity": f"{self.name} is waiting for {chosen_agent.name}",
                 "location": f"{maze.get_tile_path(self.curr_tile, 'arena')}",
-                "bag": self.bag,
+                "bag": [item for item in self.bag],
             }
             for path in potential_path:
                 chosen_agent.move_step(maze, path, record, record_time, status_walking)
@@ -1174,7 +1174,7 @@ If the conversation involves an event or invitation, please be clear about the t
                 "name": self.name,
                 "activity": f"{self.name} is talking with {chosen_agent.name} about: {summary}",
                 "location": f"{maze.get_tile_path(self.curr_tile, 'arena')}",
-                "bag": self.bag,
+                "bag": [item for item in self.bag],
                 "conversation": conversations
             }
             status_object = {
@@ -1221,7 +1221,7 @@ If the conversation involves an event or invitation, please be clear about the t
                     "name": self.name,
                     "activity": f"{self.name} is on the way to {place_}",
                     "location": f"{place_}",
-                    "bag": self.bag,
+                    "bag": [item for item in self.bag],
                 }
                 for path in potential_path:
                     record_time = self.move_step(maze, path, record, record_time, status)
@@ -1246,7 +1246,7 @@ If the conversation involves an event or invitation, please be clear about the t
                 "name": self.name,
                 "activity": f"{self.name} is on the way to {place} to pick up {required_object}",
                 "location": f"{place}",
-                "bag": self.bag,
+                "bag": [item for item in self.bag],
             }
             for path in potential_path:
                 record_time = self.move_step(maze, path, record, record_time, status)
@@ -1277,7 +1277,7 @@ If the conversation involves an event or invitation, please be clear about the t
             "name": self.name,
             "activity": f"{self.name} is on the way to {location}",
             "location": f"{location}",
-            "bag": self.bag,
+            "bag": [item for item in self.bag],
         }
         for path in potential_path:
             record_time = self.move_step(maze, path, record, record_time, status)

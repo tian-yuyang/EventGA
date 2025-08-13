@@ -9,7 +9,7 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 from operator import itemgetter
-from scripts.llm_real import OpenAILLM, LocalLLM, MindsDBLLM
+from llm import OpenAILLM, LocalLLM, MindsDBLLM
 from utils import *
 from spatial_memory import MemoryTree
 from path_finder import *

@@ -7,7 +7,7 @@ from datetime import datetime
 from tqdm import tqdm
 
 import heapq
-from scripts.llm_real import openai_api_deploy
+from llm_real import openai_api_deploy
 from generative_agent_gen import GenerativeAgent
 from location import Location
 from maze_new import Maze

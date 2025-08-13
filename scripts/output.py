@@ -5,7 +5,7 @@ import os
 import json
 from datetime import datetime, timedelta
 import argparse
-from scripts.llm_real import OpenAILLM
+from llm import OpenAILLM
 from utils import *
 from collections import Counter
 

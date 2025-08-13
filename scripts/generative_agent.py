@@ -6,7 +6,7 @@ from functools import cache
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
-from scripts.llm_real import OpenAILLM, LocalLLM, MindsDBLLM
+from llm import OpenAILLM, LocalLLM, MindsDBLLM
 from utils import DatetimeNL
 
 class GenerativeAgent:
