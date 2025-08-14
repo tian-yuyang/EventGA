@@ -1,10 +1,10 @@
-# Event a
+# EventGA
 The major author of this project is Yuyang Tian, supervised by [Tianxing He](https://cloudygoose.github.io/). This project is done during internship at Shanghai Qi Zhi Institute. We have a visualization tool available at https://github.com/Just-A-Pie/MiniAgentStudio/ .
 The code is developed based on [GitHub - joonspk-research/generative_agents: Generative Agents: Interactive Simulacra of Human Behavoir](https://github.com/joonspk-research/generative_agents) .
 
 ## Contents
 
-- [Event a](#event-a)
+- [EventGA](#eventga)
   - [Contents](#contents)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -83,7 +83,7 @@ For example:
 }
 ```
 
-Specify the start time and end time also the LLM.
+Specify the start time and end time also the LLM model.
 
 
 ## Map file
