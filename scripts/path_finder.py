@@ -6,7 +6,7 @@ Description: Implements various path finding functions for generative agents.
 Some of the functions are defunct. 
 """
 import numpy as np
-from maze_new import Maze
+from maze import Maze
 
 def print_maze(maze):
   for row in maze:

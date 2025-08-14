@@ -6,7 +6,7 @@
                     "Sam Moore", "Arthur Burton", "Carmen Ortiz", "Ryan Park", "Tamara Taylor"],
 "default_agent_config_filename":"default_agent_config.json",
 "start_time":"2023-01-03T06:00:00",
-"end_time":"2023-01-03T10:00:00",
+"end_time":"2023-01-03T07:00:00",
 "llm_provider":"openai",
 "llm_model_name":"gpt-4o-mini",
 "embedding_model_name":"text-embedding-ada-002",

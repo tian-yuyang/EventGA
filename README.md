@@ -1,14 +1,16 @@
-# Event agent
-
+# Event a
+The major author of this project is Yuyang Tian, supervised by [Tianxing He](https://cloudygoose.github.io/). This project is done during internship at Shanghai Qi Zhi Institute. We have a visualization tool available at https://github.com/Just-A-Pie/MiniAgentStudio/ .
+The code is developed based on [GitHub - joonspk-research/generative_agents: Generative Agents: Interactive Simulacra of Human Behavoir](https://github.com/joonspk-research/generative_agents) .
 
 ## Contents
 
-- [Event agent](#event-agent)
+- [Event a](#event-a)
   - [Contents](#contents)
   - [Installation](#installation)
   - [Usage](#usage)
     - [Running a simulation:](#running-a-simulation)
   - [Customize the event requirement](#customize-the-event-requirement)
+  - [Map file](#map-file)
 
 
 
@@ -34,7 +36,7 @@ pip install -r requirements.txt
 
 Prerequisites
 
-1. Edit ```\scripts\llm.py```, fill in your API keys.This project supports multiple LLMs, including: We are using Aruze, OpenAI and Claude.
+1. Edit ```\scripts\llm.py```, fill in your API keys.This project supports multiple LLMs, including: Azure, OpenAI and Claude.
 
 2. Edit the simulation arguments in the folder ```\simulation_args```.Specify the parameters for your simulation, such as the scenario or task.
 
@@ -48,13 +50,15 @@ cd scripts
  ..\simulation_args\run.bat philosophy_lecture
 ```
 
-Windows users: avoid using "\\" in command.
+Windows users: avoid using "\\\\" in command.
 
-After that, run the ```post_process.py``` to generate the record file for simulation.
+Run the ```post_process.py``` to generate the record file for visualization. 
 
 ```
-python post_process.py 
+python post_process.py --config_file "../simulation_args/philosophy_lecture/1.json" --record_folder "../generations/philosophy_lecture"
 ```
+
+After that, you can pass the generated ```records_for_sim.json``` and Map folder path to [our front-end tool](https://github.com/Just-A-Pie/MiniAgentStudio/) to watch the visualization.
 
 ## Customize the event requirement
 
@@ -80,3 +84,8 @@ For example:
 ```
 
 Specify the start time and end time also the LLM.
+
+
+## Map file
+
+The pre-defined map is located in ```\sampleMap```, you can use our front-end tool https://github.com/Just-A-Pie/MiniAgentStudio/ to edit the map and visualize the simulation.

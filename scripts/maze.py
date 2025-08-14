@@ -1,10 +1,3 @@
-"""
-Author: Joon Sung Park (joonspk@stanford.edu)
-
-File: maze.py
-Description: Defines the Maze class, which represents the map of the simulated
-world in a 2-dimensional matrix. 
-"""
 import json
 import numpy
 import datetime
@@ -12,8 +5,11 @@ import pickle
 import time
 import math
 import csv
+import os
 
 from utils import *
+
+env_matrix = "../sampleMap"
 
 def read_file_to_list(curr_file, header=False, strip_trail=True): 
   """
@@ -47,7 +43,7 @@ class Maze:
   def __init__(self): 
     # Reading in the meta information about the world. If you want tp see the
     # example variables, check out the maze_meta_info.json file. 
-    meta_info = json.load(open(f"{env_matrix}/maze_meta_info.json"))
+    meta_info = json.load(open(f"{env_matrix}/map/maze_meta_info.json"))
     # <maze_width> and <maze_height> denote the number of tiles make up the 
     # height and width of the map. 
     self.maze_width = int(meta_info["maze_width"])
@@ -71,7 +67,7 @@ class Maze:
     # Tiled export. Then we basically have the block path: 
     # World, Sector, Arena, Game Object -- again, these paths need to be 
     # unique within an instance of Reverie. 
-    blocks_folder = f"{env_matrix}/special_blocks"
+    blocks_folder = f"{env_matrix}/map/special_blocks"
    
     _sb = blocks_folder + "/sector_blocks.csv"
     sb_rows = read_file_to_list(_sb, header=False)
@@ -83,21 +79,40 @@ class Maze:
     ab_dict = dict()
     for i in ab_rows: ab_dict[i[0]] = i[-1]
     
-    _gob = blocks_folder + "/game_object_blocks.csv"
-    self.gob_rows = read_file_to_list(_gob, header=False)
-    gob_dict = dict()
-    gob_feature_dict = dict()
+    # _gob = blocks_folder + "/game_object_blocks.csv"
+    # self.gob_rows = read_file_to_list(_gob, header=False)
+    # gob_dict = dict()
+    self.gob_feature_dict = dict()
     self.object_list =set()
     self.feature_dict = dict()
-    for i in self.gob_rows:
-      gob_dict[i[0]] = i[3]
-      gob_feature_dict[i[0]] = {}
-      features = [i[4],','.join(i[5:-1]),i[-1]]
-      for item in features:
-        key, value = item.split('=')
-        key = key.strip()
-        value = value.strip()
-        gob_feature_dict[i[0]][key] = eval(value)
+    # for i in self.gob_rows:
+    #   gob_dict[i[0]] = i[1]
+    #   gob_feature_dict[i[0]] = {}
+    #   features = [i[4],','.join(i[5:-1]),i[-1]]
+    #   for item in features:
+    #     key, value = item.split('=')
+    #     key = key.strip()
+    #     value = value.strip()
+    #     gob_feature_dict[i[0]][key] = eval(value)
+    
+    
+    map_data_folder = f"{env_matrix}/map/map_data"
+    objects_folder = f"{env_matrix}/objects"
+    gb_data = json.load(open(f"{map_data_folder}/objects_data.json"))["objects"]
+    buildings_folder = f"{env_matrix}/buildings"
+    bd_data = json.load(open(f"{map_data_folder}/buildings_data.json"))["buildings"]
+    
+    objects_info = {}
+    for subdir in os.listdir(objects_folder):
+      subdir_path = os.path.join(objects_folder, subdir)
+      info = json.load(open(f"{subdir_path}/maze_meta_info.json"))
+      objects_info[info['typeId']] = [info['maze_width'], info['maze_height']]
+      
+    buildings_info = {}
+    for subdir in os.listdir(buildings_folder):
+      subdir_path = os.path.join(buildings_folder, subdir)
+      info = json.load(open(f"{subdir_path}/maze_meta_info.json"))
+      buildings_info[info['typeId']] = [info['maze_width'], info['maze_height']]
     
     
     # for i in gob_rows: 
@@ -108,16 +123,24 @@ class Maze:
     # [SECTION 3] Reading in the matrices 
     # This is your typical two dimensional matrices. It's made up of 0s and 
     # the number that represents the color block from the blocks folder. 
-    maze_folder = f"{env_matrix}/maze"
+    maze_folder = f"{env_matrix}/map/maze"
 
     _cm = maze_folder + "/collision_maze.csv"
-    collision_maze_raw = read_file_to_list(_cm, header=False)[0]
+    self.collision_maze = read_file_to_list(_cm, header=False)
     _sm = maze_folder + "/sector_maze.csv"
-    sector_maze_raw = read_file_to_list(_sm, header=False)[0]
+    sector_maze = read_file_to_list(_sm, header=False)
+    
     _am = maze_folder + "/arena_maze.csv"
-    arena_maze_raw = read_file_to_list(_am, header=False)[0]
-    _gom = maze_folder + "/game_object_maze.csv"
-    game_object_maze_raw = read_file_to_list(_gom, header=False)[0]
+    arena_maze = read_file_to_list(_am, header=False)
+    
+    self.occupied_tiles = [row[:] for row in self.collision_maze]
+    for i in range(self.maze_height):
+      for j in range(self.maze_width):
+        if self.collision_maze[i][j] != "0":
+          self.occupied_tiles[i][j] = 1
+        else:
+          self.occupied_tiles[i][j] = 0
+    
 
     # Loading the maze. The mazes are taken directly from the json exports of
     # Tiled maps. They should be in csv format. 
@@ -128,45 +151,36 @@ class Maze:
     # identical (e.g., 70 x 40).
     # example format: [['0', '0', ... '25309', '0',...], ['0',...]...]
     # 25309 is the collision bar number right now.
-    self.collision_maze = []
-    sector_maze = []
-    arena_maze = []
     game_object_maze = []
-    for i in range(0, len(collision_maze_raw), meta_info["maze_width"]): 
-      tw = meta_info["maze_width"]
-      self.collision_maze += [collision_maze_raw[i:i+tw]]
-      sector_maze += [sector_maze_raw[i:i+tw]]
-      arena_maze += [arena_maze_raw[i:i+tw]]
-      game_object_maze += [game_object_maze_raw[i:i+tw]]
-
-    output_file = maze_folder + "/sector_maze_output.csv"
-    with open(output_file, mode='w', newline='') as file:
-      writer = csv.writer(file)
-      writer.writerows(sector_maze)
-    output_file = maze_folder + "/arena_maze_output.csv"
-    with open(output_file, mode='w', newline='') as file:
-      writer = csv.writer(file)
-      writer.writerows(arena_maze)
-    output_file = maze_folder + "/collision_maze_output.csv"
-    with open(output_file, mode='w', newline='') as file:
-      writer = csv.writer(file)
-      writer.writerows(self.collision_maze)
+    for i in range(0, self.maze_height):
+      game_object_maze += [['' for j in range(self.maze_width)]]
+    uniqueid_to_name = {}
+    for object in gb_data:
+      uniqueid_to_name[object["uniqueId"]] = object["itemName"]
+    for object in gb_data:
+      if object["x"] != -1 and object["y"] != -1:
+        # print(object["itemName"])
+        # game_object_maze[object['x']][object['y']] = [object['itemName'], object['uniqueId']]
+        self.gob_feature_dict[object['uniqueId']] = {'position': []}
+        
+        for x in range(objects_info[object['typeId']][0]):
+          for y in range(objects_info[object['typeId']][1]):
+              game_object_maze[object['y']+y][object['x']+x] = [object['itemName'], object['uniqueId']]
+              self.gob_feature_dict[object['uniqueId']]['position'] += [(object['x']+x, object['y']+y)]
+        
+        for item in object["attributes"]:
+          key, value = item["key"], item["value"]
+          if key == 'quantity':
+            self.gob_feature_dict[object["uniqueId"]]['quantity'] = eval(value)
+          if key == 'container':
+            containing = value.split(',')
+            self.gob_feature_dict[object["uniqueId"]]['container'] = []
+            for item in containing:
+              item = uniqueid_to_name[item.strip()]
+              self.gob_feature_dict[object["uniqueId"]]['container'].append(item)
+          
     
-    # Once we are done loading in the maze, we now set up self.tiles. This is
-    # a matrix accessed by row:col where each access point is a dictionary
-    # that contains all the things that are taking place in that tile. 
-    # More specifically, it contains information about its "world," "sector,"
-    # "arena," "game_object," "spawning_location," as well as whether it is a
-    # collision block, and a set of all events taking place in it. 
-    # e.g., self.tiles[32][59] = {'world': 'double studio', 
-    #            'sector': '', 'arena': '', 'game_object': '', 
-    #            'spawning_location': '', 'collision': False, 'events': set()}
-    # e.g., self.tiles[9][58] = {'world': 'double studio', 
-    #         'sector': 'double studio', 'arena': 'bedroom 2', 
-    #         'game_object': 'bed', 'spawning_location': 'bedroom-2-a', 
-    #         'collision': False,
-    #         'events': {('double studio:double studio:bedroom 2:bed',
-    #                    None, None)}} 
+    
     self.tiles = []
     self.spatial_structure = dict()
     # self.item_list = dict()
@@ -177,35 +191,33 @@ class Maze:
         
         tile_details["sector"] = ""
         if sector_maze[i][j] in sb_dict: 
-          tile_details["sector"] = sb_dict[sector_maze[i][j]]
+          for item in bd_data:
+            if item['y'] <= i < item['y'] + buildings_info[item['typeId']][1] and \
+               item['x'] <= j < item['x'] + buildings_info[item['typeId']][0]:
+              tile_details["sector"] = item['itemName']
+          # tile_details["sector"] = sb_dict[sector_maze[i][j]]
           if tile_details["sector"] not in self.spatial_structure:
             self.spatial_structure[tile_details["sector"]] = {}
         
         tile_details["arena"] = ""
         if arena_maze[i][j] in ab_dict: 
           tile_details["arena"] = ab_dict[arena_maze[i][j]]
-          if tile_details["arena"] not in self.spatial_structure[tile_details["sector"]]:
-            self.spatial_structure[tile_details["sector"]][tile_details["arena"]] = []
+          try:
+            if tile_details["arena"] not in self.spatial_structure[tile_details["sector"]]:
+              self.spatial_structure[tile_details["sector"]][tile_details["arena"]] = []
+          except:
+            print(i,j)
         
         tile_details["game_object"] = ""
-        if game_object_maze[i][j] in gob_dict: 
-          tile_details["game_object"] = gob_dict[game_object_maze[i][j]]
-          tile_details["feature"] = gob_feature_dict[game_object_maze[i][j]]
-          if tile_details["arena"] in self.spatial_structure[tile_details["sector"]]:
-            self.spatial_structure[tile_details["sector"]][tile_details["arena"]] += [tile_details["game_object"]]
-            
-            
-          # if tile_details["arena"] == '':
-          #   print(f"Empty game object at {i}, {j}", tile_details["game_object"])
-          # game_object_name = ":".join([tile_details["world"], 
-          #                         tile_details["sector"], 
-          #                         tile_details["arena"],
-          #                         tile_details["game_object"]])
-          # if game_object_name not in self.item_list:
-          #   self.item_list[game_object_name] = [(i,j)]
-          # else:
-          #   self.item_list[game_object_name].append((i,j))
-        
+        if game_object_maze[i][j]: 
+          tile_details["game_object"] = game_object_maze[i][j][0]
+          tile_details["uniqueid"] = game_object_maze[i][j][1]
+          try:
+            if tile_details["arena"] in self.spatial_structure[tile_details["sector"]]:
+              self.spatial_structure[tile_details["sector"]][tile_details["arena"]] += [tile_details["game_object"]]
+          except:
+            print(i,j)
+
         
         tile_details["collision"] = False
         if self.collision_maze[i][j] != "0": 
@@ -215,25 +227,7 @@ class Maze:
         
         row += [tile_details]
       self.tiles += [row]
-    # Each game object occupies an event in the tile. We are setting up the 
-    # default event value here. 
-    # for i in range(self.maze_height):
-    #   for j in range(self.maze_width): 
-    #     if self.tiles[i][j]["game_object"]:
-    #       object_name = ":".join([self.tiles[i][j]["sector"], 
-    #                               self.tiles[i][j]["arena"], 
-    #                               self.tiles[i][j]["game_object"]])
-    #       go_event = (object_name, None, None, None)
-    #       self.tiles[i][j]["events"].add(go_event)
-
-    # Reverse tile access. 
-    # <self.address_tiles> -- given a string address, we return a set of all 
-    # tile coordinates belonging to that address (this is opposite of  
-    # self.tiles that give you the string address given a coordinate). This is
-    # an optimization component for finding paths for the personas' movement. 
-    # self.address_tiles['<spawn_loc>bedroom-2-a'] == {(58, 9)}
-    # self.address_tiles['double studio:recreation:pool table'] 
-    #   == {(29, 14), (31, 11), (30, 14), (32, 11), ...}, 
+      
     self.address_tiles = dict()
     for i in range(self.maze_height):
       for j in range(self.maze_width): 
@@ -261,16 +255,17 @@ class Maze:
           add = f'{self.tiles[i][j]["sector"]}:'
           add += f'{self.tiles[i][j]["arena"]}:'
           add += f'{self.tiles[i][j]["game_object"]}'
-          self.object_list.add(add)
-          self.feature_dict[add] = self.tiles[i][j]['feature']
-          if self.tiles[i][j]['feature']['container'] is not None:
-            for item in self.tiles[i][j]['feature']['container']:
-              item_, feature_ = gob_dict[f"{item}"], gob_feature_dict[f"{item}"]
-              self.object_list.add(f"{item_}")
-              self.feature_dict[f"{item_}"] = feature_
-              if "place" not in self.feature_dict[f"{item_}"]:
-                self.feature_dict[f"{item_}"]['place'] = set()
-              self.feature_dict[f"{item_}"]['place'].add(add)
+          # self.object_list.add(add)
+          self.feature_dict[add] = self.gob_feature_dict[self.tiles[i][j]['uniqueid']]
+          if 'container' in self.gob_feature_dict[self.tiles[i][j]['uniqueid']] and \
+          self.gob_feature_dict[self.tiles[i][j]['uniqueid']]['container'] is not None:
+            for item in self.gob_feature_dict[self.tiles[i][j]['uniqueid']]['container']:
+              # feature_ = gob_feature_dict[f"{item}"]
+              self.object_list.add(f"{item}")
+              # self.feature_dict[f"{item}"] = feature_
+              if item not in self.feature_dict:
+                self.feature_dict[f"{item}"] = set()
+              self.feature_dict[f"{item}"].add(add)
 
 
   def turn_coordinate_to_tile(self, px_coordinate): 
@@ -537,7 +532,47 @@ class Maze:
 
     return self.spatial_structure[sector][arena]
   
+  def assign_location(self, tile):
+    if self.occupied_tiles[tile[1]][tile[0]] == 1:
+      dx = [-1, 0, 1, 0, -1, -1, 1, 1]
+      dy = [0, -1, 0, 1, -1, 1, -1, 1]
+      for i in range(8):
+        new_tile = (tile[0] + dx[i], tile[1] + dy[i])
+        if new_tile[0] < 0 or new_tile[0] >= self.maze_width or \
+           new_tile[1] < 0 or new_tile[1] >= self.maze_height or \
+               self.collision_maze[new_tile[1]][new_tile[0]] != "0":
+          continue
+        if self.occupied_tiles[new_tile[1]][new_tile[0]] == 0:
+          self.occupied_tiles[new_tile[1]][new_tile[0]] = 1
+          return new_tile
+      
+      for i in range(8):
+        for j in range(8):
+          new_tile = (tile[0] + dx[i] + dx[j], tile[1] + dy[i] + dy[j])
+          if new_tile[0] < 0 or new_tile[0] >= self.maze_width or \
+             new_tile[1] < 0 or new_tile[1] >= self.maze_height or \
+               self.collision_maze[new_tile[1]][new_tile[0]] != "0":
+            continue
+          if self.occupied_tiles[new_tile[1]][new_tile[0]] == 0:
+            self.occupied_tiles[new_tile[1]][new_tile[0]] = 1
+            return new_tile
+      return tile
+    else:
+      self.occupied_tiles[tile[1]][tile[0]] = 1
+      return tile
+  
+  def release_location(self, tile):
+    self.occupied_tiles[tile[1]][tile[0]] = 0
   
   
-if __name__ == "__main__": 
+
+if __name__ == "__main__":
+  # Example usage of the Maze class
   maze = Maze()
+  # print(maze.address_tiles)
+  # print(maze.address_tiles["Dorm for Oak Hill College:Ayesha Khan's room:desk"])
+  # for sector in maze.get_accessible_sectors():
+  #   for arena in maze.get_accessible_sector_arenas(sector):
+  #     if len(maze.get_accessible_sector_arena_game_objects(sector, arena)) == 0:
+  #       print(sector, arena)
+  print(maze.collision_maze)

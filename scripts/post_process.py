@@ -8,15 +8,17 @@ from llm import OpenAILLM
 
 parser = argparse.ArgumentParser(description='run humanoid agents simulation')
 parser.add_argument("-c", "--config_filename", default="../simulation_args/philosophy_lecture/1.json")
-
+parser.add_argument("-r", "--record_folder", default="../generations/philosophy_lecture")
 args = parser.parse_args()
-args = load_json_file(args.config_filename)
+config_filename = load_json_file(args.config_filename)
 
-input_folder_name = args["input_folder_name"]
-output_folder_name = args["output_folder_name"]
-agent_filenames = args["agent_filenames"]
+input_folder_name = config_filename["input_folder_name"]
+output_folder_name = config_filename["output_folder_name"]
+agent_filenames = config_filename["agent_filenames"]
 
-LLM = OpenAILLM(llm_model_name=args["llm_model_name"], embedding_model_name=args["embedding_model_name"])
+end_time = datetime.fromisoformat(config_filename["end_time"])
+
+LLM = OpenAILLM(llm_model_name=config_filename["llm_model_name"], embedding_model_name=config_filename["embedding_model_name"])
 
 histories = {}
 noteworthy = ""
@@ -26,11 +28,12 @@ def post_process(folder):
     else:
         record_filename = os.path.join(folder, "records.json")
     print(record_filename)
-    total_data = json.load(open(record_filename, 'r'))
-    end_time = datetime.strptime("08:00:00 pm", "%I:%M:%S %p")
+    _data = json.load(open(record_filename, 'r'))
+    total_data = {}
+    for time, data in _data.items():
+        if datetime.fromisoformat(time) <= end_time:
+            total_data[time] = data
     for i, (time, data) in enumerate(total_data.items()):
-        if datetime.fromisoformat(time).time() > end_time.time():
-            break
         # print(data.keys())
         print(time)
         # return
@@ -103,6 +106,6 @@ Output only the array in plain text, do not include any other text or formatting
             json.dump(total_data, open(os.path.join(folder, "records_for_sim.json"), 'w'), indent=4)
     json.dump(total_data, open(os.path.join(folder, "records_for_sim.json"), 'w'), indent=4)
 
-# Example usage
-folder_path = '../generations/philosophy_lecture'
+
+folder_path = args.record_folder
 post_process(folder_path)
