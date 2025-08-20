@@ -4472,6 +4472,62 @@
             "y": -1,
             "itemName": "egg",
             "attributes": []
+        },
+        {
+            "uniqueId": "c06738b4-c2a5-4094-aba0-df36a3de216f",
+            "typeId": 4,
+            "x": 89,
+            "y": 46,
+            "itemName": "desk",
+            "attributes": []
+        },
+        {
+            "uniqueId": "1cf5930d-308f-4bd7-87e8-c2102d53bddc",
+            "typeId": 107,
+            "x": 76,
+            "y": 42,
+            "itemName": "cushion",
+            "attributes": []
+        },
+        {
+            "uniqueId": "cef76707-4b23-43c0-963b-7abe461702d1",
+            "typeId": 107,
+            "x": 78,
+            "y": 42,
+            "itemName": "cushion",
+            "attributes": []
+        },
+        {
+            "uniqueId": "1c003f55-03dc-4f48-af4e-3dc68957285b",
+            "typeId": 107,
+            "x": 80,
+            "y": 42,
+            "itemName": "cushion",
+            "attributes": []
+        },
+        {
+            "uniqueId": "5f01b856-ccc0-4361-aa3f-2a287f643ab1",
+            "typeId": 107,
+            "x": 76,
+            "y": 44,
+            "itemName": "cushion",
+            "attributes": []
+        },
+        {
+            "uniqueId": "0adcad24-b77f-4db9-b06b-c09fd4dcd842",
+            "typeId": 107,
+            "x": 78,
+            "y": 44,
+            "itemName": "cushion",
+            "attributes": []
+        },
+        {
+            "uniqueId": "1575c8eb-32ba-4509-b445-b3b3aa8b4725",
+            "typeId": 107,
+            "x": 80,
+            "y": 44,
+            "itemName": "cushion",
+            "attributes": []
         }
     ]
 }

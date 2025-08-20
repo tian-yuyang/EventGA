@@ -40,7 +40,7 @@ class VisualizationTool:
     def load_path(self):
         self.path = filedialog.askdirectory(title="Select folder")
         self.image_path = os.path.join(self.path, "texture.png")
-        self.csv_path = os.path.join(self.path, "maze", "collision_maze.csv")
+        self.csv_path = os.path.join(self.path, "maze", "sector_maze.csv")
         json_file = os.path.join(self.path, "maze_meta_info.json")
         try: 
             with open(json_file, 'r') as f:
@@ -83,7 +83,7 @@ class VisualizationTool:
         for i in range(self.height):
             for j in range(self.width):
                 value = csv_data[i][j]
-                if value == 32125:
+                if value != 0 and value != -1:
                     # Draw black rectangle (semi-transparent for visibility, adjust alpha as needed)
                     x0 = j * cell_width
                     y0 = i * cell_height
